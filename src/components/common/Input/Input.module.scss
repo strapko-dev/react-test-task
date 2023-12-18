@@ -1,0 +1,27 @@
+@import "../../../styles/colors/colors.scss";
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  height: fit-content;
+  max-width: 649px;
+  width: 100%;
+}
+
+.input {
+  max-width: 649px;
+  width: 100%;
+  border: 1px solid $color--grey-500;
+  border-radius: 10px;
+  padding: 7px 13px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $color--grey-700;
+
+  &Icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}

@@ -1,0 +1,105 @@
+@import "../../../styles/colors/colors.scss";
+@import "../../../styles/breakpoints/breakpoints.scss";
+
+.select {
+  max-width: 404px;
+  width: 100%;
+}
+
+.custom__control {
+  width: 100%;
+  border-radius: 15px !important;
+  border: 1px solid $color--grey-500 !important;
+
+  @include media--min($width--desktop) {
+    width: 404px;
+  }
+}
+
+.custom__indicator-separator {
+  display: none;
+}
+
+.custom__value-container {
+  padding: 20px !important;
+}
+
+.custom__placeholder {
+  font-family: "Futura PT", sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #9494a0;
+}
+
+.custom__input-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.custom__multi-value {
+  padding: 8px !important;
+  border-radius: 15px !important;
+
+  &__label {
+    font-family: "Futura PT", sans-serif;
+    font-size: 18px !important;
+    line-height: 20px;
+    font-weight: 400;
+    color: #9494a0 !important;
+  }
+
+  &__remove {
+    border-radius: 6px !important;
+  }
+}
+
+.custom__menu {
+  padding: 20px !important;
+  border-radius: 15px !important;
+  background: $color--white !important;
+  box-shadow: -30px 30px 50px 0px rgba(28, 28, 30, 0.1) !important;
+}
+
+.checkbox {
+  border-radius: 5px !important;
+  border: 1px solid $color--grey-500;
+  width: 16px;
+  height: 16px;
+  margin: 0 !important;
+  accent-color: $color--blue !important;
+  appearance: none;
+
+  &:checked {
+    background: $color--blue !important;
+    border: none;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-image: url("../../../styles/icons/check.svg");
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.custom__menu-list {
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.custom__option {
+  padding: 0 !important;
+  color: $color--grey-900 !important;
+  font-family: Futura PT;
+  font-size: 16px !important;
+  font-weight: 400;
+  line-height: 20px;
+  align-items: center !important;
+  background-color: transparent !important;
+  display: flex !important;
+  gap: 9px !important;
+}

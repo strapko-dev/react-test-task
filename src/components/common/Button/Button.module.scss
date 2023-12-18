@@ -1,0 +1,13 @@
+@import "../../../styles/colors/colors.scss";
+
+.button {
+  padding: 8px 22px;
+  border-radius: 10px;
+  background: $color--green;
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 20px;
+  color: $color--white;
+  border: none;
+  cursor: pointer;
+}

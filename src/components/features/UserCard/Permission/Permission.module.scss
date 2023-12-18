@@ -1,0 +1,16 @@
+@import "../../../../styles/colors/colors.scss";
+
+.permission {
+  border-radius: 10px;
+  border: 1px solid $color--grey-500;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  width: fit-content;
+
+  &Marked {
+    color: $color--blue;
+    border: 1px solid $color--blue;
+  }
+}

@@ -1,0 +1,12 @@
+@import "../../styles/breakpoints/breakpoints.scss";
+
+.layout {
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+
+  @include media--min($width--desktop) {
+    flex-direction: row;
+    padding: 0;
+  }
+}

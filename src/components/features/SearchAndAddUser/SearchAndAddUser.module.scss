@@ -1,0 +1,35 @@
+@import "../../../styles/colors/colors.scss";
+@import "../../../styles/breakpoints/breakpoints.scss";
+
+.searchAndAddUser {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+
+  @include media--min($width--desktop) {
+    flex-direction: row;
+    padding: 15px 29px;
+    margin-top: 0;
+  }
+
+  &Title {
+    color: $color--grey-900;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 44px;
+  }
+
+  &Wrap {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    justify-content: end;
+    flex-direction: column;
+
+    @include media--min($width--desktop) {
+      flex-direction: row;
+    }
+  }
+}

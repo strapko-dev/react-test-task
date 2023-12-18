@@ -1,0 +1,25 @@
+@import "../../../styles/breakpoints/breakpoints.scss";
+
+.usersList {
+  &Wrap {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include media--min($width--desktop) {
+      margin-top: 0;
+      gap: 0;
+    }
+  }
+
+  &NotFound {
+    padding: 20px;
+    text-align: center;
+    font-family: Futura PT;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+}

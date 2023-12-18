@@ -1,0 +1,25 @@
+@import "../../../styles/colors/colors.scss";
+
+.profileBlock {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  &Image {
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+  }
+
+  &Name {
+    color: $color--grey-900;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &Position {
+    color: $color--grey-700;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

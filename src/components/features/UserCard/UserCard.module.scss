@@ -1,0 +1,61 @@
+@import "../../../styles/colors/colors.scss";
+@import "../../../styles/breakpoints/breakpoints.scss";
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0;
+
+  @include media--min($width--desktop) {
+    padding: 18px 29px;
+  }
+
+  &Wrap {
+    display: flex;
+    gap: 11px;
+
+    @include media--min($width--desktop) {
+      align-items: center;
+    }
+  }
+
+  &Img {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &TextWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  &NameWrap {
+    display: flex;
+    flex-direction: column;
+
+    @include media--min($width--desktop) {
+      align-items: center;
+      gap: 11px;
+      flex-direction: row;
+    }
+  }
+
+  &Name {
+    color: $color--grey-900;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &Unknown {
+    font-size: 18px;
+    font-weight: 450;
+  }
+
+  &PermissionsWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}

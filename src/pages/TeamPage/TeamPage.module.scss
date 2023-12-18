@@ -1,0 +1,41 @@
+@import "../../styles/colors/colors.scss";
+@import "../../styles/breakpoints/breakpoints.scss";
+
+.teamPage {
+  background-color: $color--white;
+  max-width: 1135px;
+  height: fit-content;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 15px;
+  flex-grow: 1;
+
+  @include media--min($width--desktop) {
+    margin-top: 25px;
+    margin: 25px;
+  }
+
+  @include media--min($width--desktop-laptop) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &Wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include media--min($width--desktop) {
+      margin: 25px;
+    }
+  }
+
+  &Divider {
+    display: none;
+
+    @include media--min($width--desktop) {
+      display: block;
+    }
+  }
+}

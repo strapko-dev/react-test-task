@@ -1,0 +1,73 @@
+@import "../../../styles/colors/colors.scss";
+@import "../../../styles/breakpoints/breakpoints.scss";
+
+.popup {
+  position: relative;
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  @include media--min($width--desktop) {
+    padding: 60px;
+  }
+
+  &Text {
+    color: $color--grey-900;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 44px;
+    width: 90%;
+    margin: 0 auto;
+
+    @include media--min($width--desktop) {
+      width: 100%;
+    }
+  }
+
+  &Wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &Input {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  &Cross {
+    position: absolute;
+    top: 26px;
+    right: 20px;
+    background-color: $color--grey-300;
+    border: none;
+    border-radius: 15px;
+    padding: 13px;
+    color: $color--grey-500;
+    height: fit-content;
+    align-items: center;
+    display: block;
+    cursor: pointer;
+
+    svg {
+      display: block;
+    }
+  }
+
+  &Button {
+    padding: 20px;
+    width: 100%;
+    border-radius: 15px;
+
+    &Main {
+      max-width: 649px;
+      width: 100%;
+
+      @include media--min($width--desktop) {
+        width: auto;
+      }
+    }
+  }
+}

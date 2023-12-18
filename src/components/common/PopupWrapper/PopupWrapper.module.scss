@@ -1,0 +1,27 @@
+@import "../../../styles/colors/colors.scss";
+@import "../../../styles/breakpoints/breakpoints.scss";
+
+.popup {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &Content {
+    position: relative;
+    z-index: 6;
+    background-color: $color--white;
+    border-radius: 25px;
+    box-shadow: -30px 30px 50px 0px rgba(28, 28, 30, 0.1);
+    margin: 15px;
+
+    @include media--min($width--desktop) {
+      margin: 0;
+    }
+  }
+}

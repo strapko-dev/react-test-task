@@ -1,0 +1,66 @@
+@import "../../../../styles/colors/colors.scss";
+
+.mobileSideBar {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  &Wrap {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+  &Button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    color: $color--grey-700;
+  }
+
+  &Title {
+    color: $color--grey-900;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  &MenuWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: absolute;
+    z-index: 7;
+    top: 48px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 48px);
+    background: $color--white;
+    padding-left: 15px;
+    padding-top: 22px;
+  }
+
+  &LinksWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  &Link {
+    color: $color--grey-700;
+    text-decoration: none;
+    display: flex;
+    gap: 17px;
+    align-items: center;
+
+    &Text {
+      font-size: 16px;
+      font-weight: 450;
+    }
+
+    &:last-child {
+      color: $color--red;
+    }
+  }
+}

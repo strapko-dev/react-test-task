@@ -1,0 +1,39 @@
+@import "../../../styles/colors/colors.scss";
+@import "../../../styles/breakpoints/breakpoints.scss";
+
+.delete {
+  position: relative;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  width: 100%;
+
+  @include media--min($width--desktop) {
+    width: 526px;
+  }
+
+  &Title {
+    color: $color--grey-900;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-align: center;
+  }
+
+  &Field {
+    color: $color--grey-700;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: start;
+  }
+
+  &Button {
+    padding: 20px;
+    width: 100%;
+    border-radius: 15px;
+  }
+}

@@ -1,0 +1,40 @@
+@import "./styles/fonts/fonts.scss";
+@import "./styles/colors/colors.scss";
+@import "./styles/breakpoints/breakpoints.scss";
+
+body {
+  margin: 0;
+  font-family: "Futura PT", sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $color--grey-700;
+  background-color: $color--white;
+
+  @include media--min($width--desktop) {
+    background-color: $color--grey-300;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  input,
+  button {
+    box-sizing: border-box;
+    font-family: "Futura PT", sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    color: $color--grey-700;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+}
