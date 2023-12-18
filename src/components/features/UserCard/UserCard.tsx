@@ -6,11 +6,10 @@ import UserCardDropdown from "./UserCardDropdown/UserCardDropdown";
 
 interface UserCardProps {
   data: User;
-  users: User[];
   setUsers: React.Dispatch<React.SetStateAction<Users>>;
 }
 
-const UserCard = ({ data, setUsers, users }: UserCardProps) => {
+const UserCard = ({ data, setUsers }: UserCardProps) => {
   const { name, email, image, permissions } = data;
 
   return (
@@ -38,7 +37,7 @@ const UserCard = ({ data, setUsers, users }: UserCardProps) => {
           </div>
         </div>
       </div>
-      <UserCardDropdown users={users} email={email} setUsers={setUsers} />
+      <UserCardDropdown email={email} setUsers={setUsers} />
     </div>
   );
 };

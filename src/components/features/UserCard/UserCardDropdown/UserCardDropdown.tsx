@@ -9,14 +9,9 @@ import DeleteUser from "../../DeleteUser/DeleteUser";
 interface UserCardDropdownProps {
   email: string;
   setUsers: React.Dispatch<React.SetStateAction<Users>>;
-  users: Users;
 }
 
-const UserCardDropdown = ({
-  setUsers,
-  email,
-  users,
-}: UserCardDropdownProps) => {
+const UserCardDropdown = ({ setUsers, email }: UserCardDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -38,7 +33,7 @@ const UserCardDropdown = ({
           >
             <ChangePermissionsUser email={email} setUsers={setUsers} />
             <ResendCodeUser email={email} />
-            <DeleteUser users={users} email={email} setUsers={setUsers} />
+            <DeleteUser email={email} setUsers={setUsers} />
           </div>
 
           <div

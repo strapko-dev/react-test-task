@@ -7,10 +7,9 @@ import Button from "../../common/Button/Button";
 interface DeleteUserProps {
   email: string;
   setUsers: React.Dispatch<React.SetStateAction<Users>>;
-  users: Users;
 }
 
-const DeleteUser = ({ email, setUsers, users }: DeleteUserProps) => {
+const DeleteUser = ({ email, setUsers }: DeleteUserProps) => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const [isAlreadyOpened, setIsAlreadyOpened] = useState(false);
 

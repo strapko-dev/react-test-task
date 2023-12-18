@@ -12,12 +12,7 @@ const UsersList = ({ data, setUsers }: UsersListProps) => {
   return data.length ? (
     <div className={styles["usersListWrap"]}>
       {data.map((user, i) => (
-        <UserCard
-          key={user.email + i}
-          data={user}
-          users={data}
-          setUsers={setUsers}
-        />
+        <UserCard key={user.email + i} data={user} setUsers={setUsers} />
       ))}
     </div>
   ) : (
