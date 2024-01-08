@@ -15,7 +15,7 @@ const DesktopSideBar = ({ data }: DesktopSideBarProps) => {
       </a>
 
       <img
-        src="https://s3-alpha-sig.figma.com/img/1736/1836/0dc56502b550c78282502b8b5bdce290?Expires=1703462400&Signature=FQcbfD7CFFc7ZWNZ6ErvuJj~k-XMqcKdrrcSZ9hKxhCH98AMDKFKYh7KAmhGOu9Bf9picSmMMXD-c2UX4-wmYwewKwTBu4d8nd-aZrFA~d6t34JT1wgx7580rxZt8IkIj9iTOxY2LQDR~wEpTHsiWIsVgmdWVj81T6JoFR87Thf3T~u7tSHI0jrUDFuUCgjN4i577tVloS5k1ROaHeNcTjCv0PXRjk1MlyCSRLsBRARYLEvgz2i5prsXQZitSQiHePe9hRJaBmC-4Yk2RC1tMPsHMeIGYbO5ieojZkJa2vBUfDYcGkf8k9LSb2ZbgOtL3yGSw5Gz4BQQ76pAGBTk6A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+        src="https://s3-alpha-sig.figma.com/img/1736/1836/0dc56502b550c78282502b8b5bdce290?Expires=1705881600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RwTGSkrTkN~y7~13OQOMW7HsHN2jJLAKObsiPyJ0R9tz3YlHkQ-IAXHsHQCSPas4LlzfkoihK4~P7jefozncruatPcMSS4hgpR7j~qY9~ES3DVFDD4n2LBp1T7tgtn9BggapX1WNtzAQJlL61xZh0SOCvLwT8JDU7AnAddP5YUz6tYqODAHOdDdvks0qlgIYLCPiOO3n8~g7b~aBxDlSgm~1d~6rz18KY3XWS7aL0AJPZGViaKt1UrudcE4Ni9xpmsnY4X~Nyfpatflg2eYojma95JsyRi~rAKcfDvyfjoDmFHwbEA4vOzDidi~Y7TunaywVmefMTZ8eAQlj8JEa9g__"
         alt="avatar"
         className={styles["desktopSideBarImage"]}
         width={60}

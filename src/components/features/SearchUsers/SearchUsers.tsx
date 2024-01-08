@@ -16,7 +16,9 @@ const SearchUsers = ({ users, setUsers }: SearchUsersProps) => {
   useEffect(() => {
     if (emailText.length) {
       setUsers((prev) =>
-        prev.filter((user) => user.email.includes(debouncedEmailText))
+        prev.filter((user) =>
+          user.email.toLowerCase().includes(debouncedEmailText.toLowerCase())
+        )
       );
     } else {
       setUsers(users);
