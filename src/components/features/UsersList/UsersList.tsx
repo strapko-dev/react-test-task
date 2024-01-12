@@ -1,18 +1,16 @@
 import React from "react";
 import styles from "./UsersList.module.scss";
-import { Users } from "../../../models/interfaces";
 import UserCard from "../UserCard/UserCard";
+import { storeSelect } from "../../../store/slices/counterSlice";
+import { useAppSelector } from "../../../hooks/redux";
 
-interface UsersListProps {
-  data: Users;
-  setUsers: React.Dispatch<React.SetStateAction<Users>>;
-}
+const UsersList = () => {
+  const { filteredUsers } = useAppSelector(storeSelect);
 
-const UsersList = ({ data, setUsers }: UsersListProps) => {
-  return data.length ? (
+  return filteredUsers.length ? (
     <div className={styles["usersListWrap"]}>
-      {data.map((user, i) => (
-        <UserCard key={user.email + i} data={user} setUsers={setUsers} />
+      {filteredUsers.map((user, i) => (
+        <UserCard key={user.email + i} data={user} />
       ))}
     </div>
   ) : (

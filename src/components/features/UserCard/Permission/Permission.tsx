@@ -11,7 +11,7 @@ const Permission = ({ permission }: PermissionProps) => {
     <div
       className={cn(
         styles["permission"],
-        permission === "Администратор" && styles["permissionMarked"]
+        permission === "Administrator" && styles["permissionMarked"]
       )}
     >
       {permission}

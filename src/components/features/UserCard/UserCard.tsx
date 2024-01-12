@@ -1,15 +1,14 @@
 import React from "react";
 import styles from "./UserCard.module.scss";
-import { User, Users } from "../../../models/interfaces";
+import { User } from "../../../models/interfaces";
 import Permission from "./Permission/Permission";
 import UserCardDropdown from "./UserCardDropdown/UserCardDropdown";
 
 interface UserCardProps {
   data: User;
-  setUsers: React.Dispatch<React.SetStateAction<Users>>;
 }
 
-const UserCard = ({ data, setUsers }: UserCardProps) => {
+const UserCard = ({ data }: UserCardProps) => {
   const { name, email, image, permissions } = data;
 
   return (
@@ -37,7 +36,7 @@ const UserCard = ({ data, setUsers }: UserCardProps) => {
           </div>
         </div>
       </div>
-      <UserCardDropdown email={email} setUsers={setUsers} />
+      <UserCardDropdown email={email} />
     </div>
   );
 };

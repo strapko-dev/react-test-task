@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import styles from "./DeleteUser.module.scss";
-import { Users } from "../../../models/interfaces";
 import PopupWrapper from "../../common/PopupWrapper/PopupWrapper";
 import Button from "../../common/Button/Button";
+import { setUsers, storeSelect } from "../../../store/slices/counterSlice";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 
 interface DeleteUserProps {
   email: string;
-  setUsers: React.Dispatch<React.SetStateAction<Users>>;
 }
 
-const DeleteUser = ({ email, setUsers }: DeleteUserProps) => {
+const DeleteUser = ({ email }: DeleteUserProps) => {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const [isAlreadyOpened, setIsAlreadyOpened] = useState(false);
+  const { users } = useAppSelector(storeSelect);
+  const dispatch = useAppDispatch();
 
   const handleClick = () => {
     setIsOpenPopup(true);
@@ -21,26 +23,26 @@ const DeleteUser = ({ email, setUsers }: DeleteUserProps) => {
     setIsAlreadyOpened(true);
 
     if (isOpenPopup === false && isAlreadyOpened === true) {
-      setUsers((prev) => prev.filter((user) => user.email !== email));
+      dispatch(setUsers(users.filter((user) => user.email !== email)));
     }
   }, [isOpenPopup]);
 
   return (
     <>
       <button onClick={handleClick} className={styles["deleteField"]}>
-        Удалить
+        Delete
       </button>
       {isOpenPopup && (
         <PopupWrapper setIsOpen={setIsOpenPopup}>
           <div className={styles["delete"]}>
             <div className={styles["deleteTitle"]}>
-              Пользователь успешно удален
+              User has been successfully deleted
             </div>
             <Button
               onClick={() => setIsOpenPopup(false)}
               className={styles["deleteButton"]}
             >
-              Закрыть
+              Close
             </Button>
           </div>
         </PopupWrapper>

@@ -1,35 +1,37 @@
 import React, { useState } from "react";
 import Button from "../../common/Button/Button";
-import { Permission, Users } from "../../../models/interfaces";
+import { Permission } from "../../../models/interfaces";
 import PopupWrapper from "../../common/PopupWrapper/PopupWrapper";
 import styles from "./AddUsers.module.scss";
 import Input from "../../common/Input/Input";
 import CrossIcon from "../../../styles/icons/CrossIcon";
 import PermissionsSelect from "../PermissionsSelect/PermissionsSelect";
+import { setUsers, storeSelect } from "../../../store/slices/counterSlice";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 
-interface AddUsersProps {
-  setUsers: React.Dispatch<React.SetStateAction<Users>>;
-}
-
-const AddUsers = ({ setUsers }: AddUsersProps) => {
-  const [isOpenPopup, setIsOpenPopup] = useState(false);
+const AddUsers = () => {
   const [email, setEmail] = useState("");
+  const [isOpenPopup, setIsOpenPopup] = useState(false);
   const [permissions, setPermissions] = useState<Permission[]>([]);
+  const { users } = useAppSelector(storeSelect);
+  const dispatch = useAppDispatch();
 
   const onSubmit = () => {
     const permissionsStrings = permissions.map((perm) => perm.label);
-    setUsers((prev) => [
-      {
-        name: "Пользователь",
-        email: email,
-        permissions: permissionsStrings,
-        image: require("../../../public/img/avatar.png"),
-      },
-      ...prev,
-    ]);
     setIsOpenPopup(false);
     setEmail("");
     setPermissions([]);
+    dispatch(
+      setUsers([
+        {
+          name: "User",
+          email: email,
+          permissions: permissionsStrings,
+          image: require("../../../public/img/avatar.png"),
+        },
+        ...users,
+      ])
+    );
   };
 
   return (
@@ -38,12 +40,12 @@ const AddUsers = ({ setUsers }: AddUsersProps) => {
         className={styles["popupButtonMain"]}
         onClick={() => setIsOpenPopup(true)}
       >
-        Добавить пользователя
+        Add user
       </Button>
       {isOpenPopup && (
         <PopupWrapper setIsOpen={setIsOpenPopup}>
           <div className={styles["popup"]}>
-            <div className={styles["popupText"]}>Отправьте приглашение</div>
+            <div className={styles["popupText"]}>Send an invitation</div>
             <div className={styles["popupWrap"]}>
               <Input
                 value={email}
@@ -56,7 +58,7 @@ const AddUsers = ({ setUsers }: AddUsersProps) => {
                 setPermissions={setPermissions}
               />
               <Button onClick={onSubmit} className={styles["popupButton"]}>
-                Отправить приглашение
+                Send an invitation
               </Button>
             </div>
             <button

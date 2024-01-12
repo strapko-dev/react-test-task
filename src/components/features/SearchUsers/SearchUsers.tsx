@@ -1,35 +1,43 @@
 import React, { useEffect, useState } from "react";
 import Input from "../../common/Input/Input";
-import { Users } from "../../../models/interfaces";
 import { useDebounce } from "../../../hooks/useDebounce";
 import SearchIcon from "../../../styles/icons/SearchIcon";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
+import {
+  setFilteredUsers,
+  setUsers,
+  storeSelect,
+} from "../../../store/slices/counterSlice";
 
-interface SearchUsersProps {
-  users: Users;
-  setUsers: React.Dispatch<React.SetStateAction<Users>>;
-}
-
-const SearchUsers = ({ users, setUsers }: SearchUsersProps) => {
+const SearchUsers = () => {
   const [emailText, setEmailText] = useState("");
   const debouncedEmailText = useDebounce<string>(emailText, 500);
+  const { users } = useAppSelector(storeSelect);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (emailText.length) {
-      setUsers((prev) =>
-        prev.filter((user) =>
-          user.email.toLowerCase().includes(debouncedEmailText.toLowerCase())
+      dispatch(
+        setFilteredUsers(
+          users.filter((user) =>
+            user.email.toLowerCase().includes(debouncedEmailText.toLowerCase())
+          )
         )
       );
     } else {
-      setUsers(users);
+      dispatch(setFilteredUsers(users));
     }
   }, [debouncedEmailText, setUsers]);
+
+  useEffect(() => {
+    dispatch(setFilteredUsers(users));
+  }, [users]);
 
   return (
     <Input
       value={emailText}
       changeValue={setEmailText}
-      placeholder="Поиск по Email"
+      placeholder="Email search"
       icon={<SearchIcon />}
     />
   );

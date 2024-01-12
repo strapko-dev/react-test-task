@@ -16,19 +16,19 @@ const ResendCodeUser = ({ email }: ResendCodeUserProps) => {
         onClick={() => setIsOpenPopup((prev) => !prev)}
         className={styles["resendField"]}
       >
-        Отправить код повторно
+        Resend code
       </button>
       {isOpenPopup && (
         <PopupWrapper setIsOpen={setIsOpenPopup}>
           <div className={styles["resend"]}>
             <div className={styles["resendTitle"]}>
-              Приглашение отправлено на почту {email}
+              The invitation has been sent to {email}
             </div>
             <Button
               onClick={() => setIsOpenPopup(false)}
               className={styles["resendButton"]}
             >
-              Закрыть
+              Close
             </Button>
           </div>
         </PopupWrapper>

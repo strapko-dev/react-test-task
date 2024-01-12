@@ -9,14 +9,14 @@ interface PermissionsSelectProps {
 
 const options = [
   {
-    value: "Модерация объявлений",
-    label: "Модерация объявлений",
+    value: "Moderation",
+    label: "Moderation",
   },
-  { value: "Блог", label: "Блог" },
-  { value: "Тех. поддержка", label: "Тех. поддержка" },
-  { value: "Обращения клиентов", label: "Обращения клиентов" },
-  { value: "Аналитика", label: "Аналитика" },
-  { value: "Акции", label: "Акции" },
+  { value: "Blog", label: "Blog" },
+  { value: "Technical support", label: "Technical support" },
+  { value: "Customer appeal", label: "Customer appeal" },
+  { value: "Analytics", label: "Analytics" },
+  { value: "Stock", label: "Stock" },
 ];
 
 const PermissionsSelect = ({
@@ -27,7 +27,7 @@ const PermissionsSelect = ({
     <MultiSelect
       value={permissions as any}
       changeValue={setPermissions as any}
-      placeholder="Выберите права доступа"
+      placeholder="Choose Permissions"
       options={options}
     />
   );

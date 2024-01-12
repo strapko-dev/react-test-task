@@ -51,7 +51,7 @@ const MultiSelect = ({
 
   const selectAllOption = {
     value: "<SELECT_ALL>",
-    label: "Все",
+    label: "All",
   };
 
   const isSelectAllSelected = () => valueRef.current.length === options.length;
