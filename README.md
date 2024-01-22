@@ -7,5 +7,4 @@ To start the project you need to clone it and use these commands:
 2) npm start
 
 Here you can check a demo:
-
 https://react-test-task-vert.vercel.app/
